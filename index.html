@@ -205,6 +205,32 @@
             font-size: 0.9em;
         }
 
+        .btn-challenge {
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            color: #333;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+            border: 2px solid rgba(255, 215, 0, 0.6);
+        }
+
+        .btn-challenge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 215, 0, 0.6);
+            background: linear-gradient(45deg, #FFA500, #FFD700);
+        }
+
+        @media (hover: none) {
+            .btn-challenge:hover {
+                transform: none;
+            }
+            
+            .btn-challenge:active {
+                transform: scale(0.95);
+                transition: transform 0.1s ease;
+            }
+        }
+
         .btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
@@ -534,7 +560,7 @@
             <div class="header">
                 <h1>🎯 Hello, <span id="playerNameDisplay"></span>!</h1>
                 <div class="game-controls">
-                    <button class="btn btn-control" id="challengeBtn" onclick="openChallengeModal()">Challenge</button>
+                    <button class="btn btn-control btn-challenge" id="challengeBtn" onclick="openChallengeModal()">🎯 Challenge</button>
                     <button class="btn btn-control" id="pauseBtn" onclick="pauseGame()">Pause</button>
                     <button class="btn btn-control" id="stopBtn" onclick="stopGame()">Stop</button>
                 </div>
